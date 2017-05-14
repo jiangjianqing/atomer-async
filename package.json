@@ -1,12 +1,12 @@
 {
   "name": "atomer-async",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "async lib for my node app",
   "main": "index.js",
   "scripts": {
     "compile": "test -d src && babel src -d lib -s || echo 'Compile:src directory not found,compile ignored!'",
     "test": "npm run compile && mocha",
-    "prepublish": "npm run compile"
+    "prepublish": "npm run compile && npm test"
   },
   "repository": {
     "type": "git",
