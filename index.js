@@ -3,5 +3,6 @@
  */
 module.exports = {
     "parallel" : require("./lib/parallel"),
-    "series" : require("./lib/series")
+    "series" : require("./lib/series"),
+    "AsyncTaskManager" : require("./lib/async-task-manager")
 };
