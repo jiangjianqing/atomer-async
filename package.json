@@ -1,0 +1,36 @@
+{
+  "name": "atomer-async",
+  "version": "0.0.1",
+  "description": "async lib for my node app",
+  "main": "index.js",
+  "scripts": {
+    "compile": "test -d src && babel src -d lib -s || echo 'Compile:src directory not found,compile ignored!'",
+    "test": "npm run compile && mocha",
+    "prepublish": "npm run compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jiangjianqing/atomer-async.git"
+  },
+  "keywords": [
+    "async"
+  ],
+  "author": "cz_jjq",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jiangjianqing/atomer-async/issues"
+  },
+  "homepage": "https://github.com/jiangjianqing/atomer-async#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0"
+  },
+  "dependencies": {
+    "q": "^1.5.0"
+  }
+}
