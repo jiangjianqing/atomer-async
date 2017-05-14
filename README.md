@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/jiangjianqing/atomer-async.svg?branch=master)](https://travis-ci.org/jiangjianqing/atomer-async)
+
+
 #parallel
 用法:
 parallel(tasks,callback);
