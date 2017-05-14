@@ -29,8 +29,6 @@ describe('parallel test', () => {
     });
 
     it('parallel correct test', done => {
-        //var s = new Series();
-
 
         parallel(tasks, function(error, results){
             should.equal(error, null);
@@ -52,6 +50,17 @@ describe('parallel test', () => {
             done();
         });
 
+    });
+
+    it('parallel correct test with alwaysSuccess', done => {
+        tasks.push(function(){
+            setTimeout(this.done("timeout",true),200);
+        })
+        parallel(tasks, function(error, results){
+            should.equal(error, null);
+            console.log(results);
+            done();
+        });
 
     });
 
