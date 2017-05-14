@@ -1,0 +1,5 @@
+--reporter spec
+--recursive
+--growl
+--bail
+--compilers js:babel-core/register

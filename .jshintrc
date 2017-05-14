@@ -1,0 +1,66 @@
+{
+  "browser": true, //预定义全局变量 document ， navigator ， FileReader 等
+  "globals": {
+    "$": false,
+    "jQuery": false
+  },
+  "devel": true, //定义用于调试的全局变量： console ， alert
+
+
+  "validthis": true, //在非构造器函数中使用 this
+  "supernew": true, //new function () { ... } 和 new Object ;
+  "sub": true,  // person['name'] vs. person.name
+  "notypeof": true, //检查无效的 typeof 操作符值
+  "multistr": true, //检查多行字符串
+
+  "lastsemic": true,  //检查一行代码最后声明后面的分号是否遗漏
+
+  "evil": true, //控制 eval 使用警告
+  "newcap": true, //构造器函数首字母大写
+  "freeze": true, //禁止重写原生对象的原型，比如 Array ， Date
+
+
+  "predef":[
+    "document",
+    "module",
+    "require",
+    "__dirname",
+    "process",
+    "console",
+    "it",
+    "xit",
+    "describe",
+    "xdescribe",
+    "before",
+    "beforeEach",
+    "after",
+    "afterEach"
+  ],
+  "node":true,
+  "esversion" : 6, //重要：支持es6语法，让jshint不报es6的警告
+  //"es5":true,
+  "bitwise":true, //禁用位运算符，位运算符在 JavaScript 中使用较少，经常是把 && 错输成 &
+  "curly":true,   //if和when后面都必须跟{，否则出现 Expected '{' and instead saw xxxx
+  "eqeqeq":true,  //强制使用三等号
+  "forin":false,
+  "immed":true,
+  "latedef":true, //禁止定义之前使用变量，忽略 function 函数声明
+
+  "noarg":true, //禁止使用 arguments.caller 和 arguments.callee ，未来会被弃用， ECMAScript 5 禁止使用 arguments.callee
+  "quotmark": false,  //为 true 时，禁止单引号和双引号混用
+  "noempty":true,
+  "nonew":true,
+  "plusplus":false,
+  "undef":true, //变量未定义
+  "maxparams": 4, //最多参数个数
+  "loopfunc": true,   //检查循环内嵌套 function
+
+  "strict":false,
+  "trailing":false,
+  "globalstrict":true,
+  "nonstandard":true,
+  "white":true,
+  "expr":true,
+  "onevar":false,
+  "unused":"vars"
+}
