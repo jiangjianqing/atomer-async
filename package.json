@@ -1,6 +1,6 @@
 {
   "name": "atomer-async",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "async lib for my node app",
   "main": "index.js",
   "scripts": {
