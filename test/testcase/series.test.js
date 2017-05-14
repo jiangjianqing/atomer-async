@@ -33,8 +33,8 @@ describe('series test', () => {
             tasks,
             function(error,results){
                 should.not.exist(error);
-                console.log("successed!");
-                console.log(results);
+                //console.log("successed!");
+                //console.log(results);
                 done();
             }
         ).run("file1");

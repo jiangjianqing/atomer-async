@@ -32,7 +32,7 @@ describe('parallel test', () => {
 
         parallel(tasks, function(error, results){
             should.equal(error, null);
-            console.log(results);
+            //console.log(results);
             done();
         });
 
@@ -46,7 +46,7 @@ describe('parallel test', () => {
 
         parallel(tasks, function(error, results){
             should.exist(error);
-            console.log(error);
+            //console.log(error);
             done();
         });
 
@@ -58,7 +58,7 @@ describe('parallel test', () => {
         });
         parallel(tasks, function(error, results){
             should.equal(error, null);
-            console.log(results);
+            //console.log(results);
             done();
         });
 
