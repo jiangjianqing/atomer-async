@@ -15,34 +15,50 @@ var series = require("../../lib/series");
  should.not.equal(foo, null);
  **/
 
-describe.skip('example test', () => {
+describe('series test', () => {
     var tasks = [];
     beforeEach(function(){
         tasks = [
-            function(){
-                fs.readFile(__dirname+"/../resources/file1", "utf-8", this.done("file1"));
+            function(file1Name){
+                fs.readFile(__dirname+"/../resources/"+file1Name, "utf-8", this.done("file1"));
             },
-            function(){
-                fs.readFile(__dirname+"/../resources/file2", "utf-8", this.done("file2"));
+            function(file2Name){
+                fs.readFile(__dirname+"/../resources/"+file2Name, "utf-8", this.done("file2"));
             }
         ];
     });
 
-    it('example correct test', done => {
-        //var s = new Series();
-
-        done();
-
-
-
+    it('series correct test', done => {
+        series(
+            tasks,
+            function(error,results){
+                should.not.exist(error);
+                console.log("successed!");
+                console.log(results);
+                done();
+            }
+        ).run("file1");
 
     });
 
-    it('example fail test', done => {
-
-        done();
-
-
+    it('series fail test', done => {
+        tasks.push(function(){
+            var that = this;
+            setTimeout(function(){
+                var error = new Error("custom timeout error");
+                var done = that.done("timeout");
+                done(error);
+            },100);
+        });
+        series(
+            tasks,
+            function(error,results){
+                should.exist(error);
+                //console.log("failed!");
+                //console.log(error);
+                done();
+            }
+        ).run("file1");
     });
 
 });
